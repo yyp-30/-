@@ -4,16 +4,7 @@ import java.util.regex.Pattern;
 import java.math.RoundingMode;
 public class zy2{
     public static void main(String[] args){
-        int max=10;
-        char[] op={ ' ', '+', '-', '*', '/' };// 操作符
-        int[] no=new int[4];
-        int useno=0;
-        int n=3;
-        int[] num1=new int[10];
-        char opp;// 判断是否需要乘除法
-        char real;// 判断是否需要真分数的题目
-        int[] cs={ 1, 100 };// 数值范围
-        String[] userAnser=new String[max];// 用户输入的答案
+ String[] userAnser=new String[max];// 用户输入的答案
         String[] staticAnser=new String[max];// 标准答案
         int sign; 
         float left,right;
@@ -26,8 +17,17 @@ public class zy2{
         int s2=1;
         int result=0;
         int gys;// 最大公约数
+	char opp;// 判断是否需要乘除法
+        char real;// 判断是否需要真分数的题目
+        int[] cs={ 1, 100 };// 数值范围
         int ff=0;
-		int fff=0;
+	int fff=0;
+        int max=10;
+        char[] op={ ' ', '+', '-', '*', '/' };// 操作符
+        int[] no=new int[4];
+        int useno=0;
+        int n=3;
+        int[] num1=new int[10];
         String zjfz=new String();// 最简分子
         String zjfm=new String();// 最简分母
 		Pattern pattern=Pattern.compile("[0-9]*");
