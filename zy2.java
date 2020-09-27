@@ -4,46 +4,46 @@ import java.util.regex.Pattern;
 import java.math.RoundingMode;
 public class zy2{
     public static void main(String[] args){
-        int max=10;// ¿ØÖÆËãÊ½¸öÊı
-        char[] op={ ' ', '+', '-', '*', '/' };// ²Ù×÷·û
-        int[] no=new int[4];// ²Ù×÷·ûµØÖ·
-        int useno=0;// ¿ØÖÆ²Ù×÷·û
-        int n=3;// ²Ù×÷Êı¸öÊı£¨Ëæ»ú£©
-        int[] num1=new int[10];// ²Ù×÷Êı
-        char opp;// ÅĞ¶ÏÊÇ·ñĞèÒª³Ë³ı·¨
-        char real;// ÅĞ¶ÏÊÇ·ñĞèÒªÕæ·ÖÊıµÄÌâÄ¿
-        int[] cs={ 1, 100 };// ÊıÖµ·¶Î§
-        String[] userAnser=new String[max];// ÓÃ»§ÊäÈëµÄ´ğ°¸
-        String[] staticAnser=new String[max];// ±ê×¼´ğ°¸
-        int sign; // ÀÛ¼ÓÔËËãÊ±µÄ·ûºÅ
-        float left,right;// ±£´æ²ä½á¹û
-        int f=0;// ¿ØÖÆÊä³öÕæ·ÖÊıµÄ²Ù×÷·û
-        int count=0;// Í³¼Æ´ğÌâÕıÈ·µÄÊıÁ¿
+        int max=10;
+        char[] op={ ' ', '+', '-', '*', '/' };// æ“ä½œç¬¦
+        int[] no=new int[4];
+        int useno=0;
+        int n=3;
+        int[] num1=new int[10];
+        char opp;// åˆ¤æ–­æ˜¯å¦éœ€è¦ä¹˜é™¤æ³•
+        char real;// åˆ¤æ–­æ˜¯å¦éœ€è¦çœŸåˆ†æ•°çš„é¢˜ç›®
+        int[] cs={ 1, 100 };// æ•°å€¼èŒƒå›´
+        String[] userAnser=new String[max];// ç”¨æˆ·è¾“å…¥çš„ç­”æ¡ˆ
+        String[] staticAnser=new String[max];// æ ‡å‡†ç­”æ¡ˆ
+        int sign; 
+        float left,right;
+        int f=0;// æ§åˆ¶è¾“å‡ºçœŸåˆ†æ•°çš„æ“ä½œç¬¦
+        int count=0;// ç»Ÿè®¡ç­”é¢˜æ­£ç¡®çš„æ•°é‡
         DecimalFormat decimal=new DecimalFormat("#.##");
 		decimal.setRoundingMode(RoundingMode.HALF_UP);
-        int s1=1;// ·Ö×ÓÍ¨·Ö
-        int ss1=1;// ·Ö×ÓÍ¨·Ö
-        int s2=1;// ·ÖÄ¸Í¨·Ö
-        int result=0;// ·Ö×Ó¼ÆËã
-        int gys;// ×î´ó¹«Ô¼Êı
-        int ff=0;// ·ÖÊı³ı·¨£¬·Ö×ÓÎª0±êÖ¾Î»
+        int s1=1;
+        int ss1=1;
+        int s2=1;
+        int result=0;
+        int gys;// æœ€å¤§å…¬çº¦æ•°
+        int ff=0;
 		int fff=0;
-        String zjfz=new String();// ×î¼ò·Ö×Ó
-        String zjfm=new String();// ×î¼ò·ÖÄ¸
-		Pattern pattern=Pattern.compile("[0-9]*"); // ÏŞ¶¨ÊäÈëËãÊ½ÊıÁ¿ÊäÈëµÄ±ØĞëÊÇÊı×Ö
+        String zjfz=new String();// æœ€ç®€åˆ†å­
+        String zjfm=new String();// æœ€ç®€åˆ†æ¯
+		Pattern pattern=Pattern.compile("[0-9]*");
         Scanner in=new Scanner(System.in);
-        System.out.print("ÇëÊäÈëĞè¶¨ÖÆµÄËãÊ½ÊıÁ¿£º");// 1.¶¨ÖÆÊıÁ¿
+        System.out.print("è¯·è¾“å…¥éœ€å®šåˆ¶çš„ç®—å¼æ•°é‡ï¼š");
         do{
 			String str=in.nextLine();
-            if(pattern.matcher(str).matches()){// Èç¹ûÊäÈëµÄÊÇÊı×Ö¾ÍÖ´ĞĞ
+            if(pattern.matcher(str).matches()){
                 max=Integer.parseInt(str);
                 break;
             }
 			else{                 
-			    System.out.print("ÄãÊäÈëµÄ²»ÊÇÊı×Ö£¬ÇëÖØĞÂÊäÈë:");
+			    System.out.print("ä½ è¾“å…¥çš„ä¸æ˜¯æ•°å­—ï¼Œè¯·é‡æ–°è¾“å…¥:");
             }
         } while (true);
-        System.out.print("ÊÇ·ñĞèÒª³Ë³ı·¨£¨Y/N£©:");// 2.¿ØÖÆ³Ë³ı²ÎÊı
+        System.out.print("æ˜¯å¦éœ€è¦ä¹˜é™¤æ³•ï¼ˆY/Nï¼‰:");
 		do{
 			opp=in.next().charAt(0);
 			if(opp=='Y'||opp =='y'){
@@ -55,13 +55,13 @@ public class zy2{
 				break;
 			}
 			else{
-				System.out.print("ÊäÈë´íÎó£¬ÖØĞÂÊäÈë");
+				System.out.print("è¾“å…¥é”™è¯¯ï¼Œé‡æ–°è¾“å…¥");
 			}
 		}while(true);
-        System.out.print("²ÎÊı·¶Î§£¨eg:1,100£©:");// 3.¿ØÖÆÊıÖµ·¶Î§
+        System.out.print("å‚æ•°èŒƒå›´ï¼ˆeg:1,100ï¼‰:");
         String str=new String();
 		int sr=0;
-        in.nextLine();// ¹ıÂËµôÉÏÃæ.next()·½ÃæµÄ»Ø³µ
+        in.nextLine();
 		do{
 			try{
 				
@@ -72,10 +72,10 @@ public class zy2{
 				cs[1]=Integer.valueOf(ss[1]);
 				sr=1;
 			}catch(Exception e){
-				System.out.print("ÊäÈë´íÎó£¬ÖØĞÂÊäÈë:");
+				System.out.print("è¾“å…¥é”™è¯¯ï¼Œé‡æ–°è¾“å…¥:");
 			}
 		}while(sr!=1);
-		System.out.print("ÊÇ·ñÔö¼ÓÕæ·ÖÊıÁ·Ï°Ìâ£¨Y/N£©:");// 3.¿ØÖÆÊıÖµ·¶Î§
+		System.out.print("æ˜¯å¦å¢åŠ çœŸåˆ†æ•°ç»ƒä¹ é¢˜ï¼ˆY/Nï¼‰:");
 		do{
 			
 			real=in.next().charAt(0);
@@ -86,18 +86,18 @@ public class zy2{
 				break;
 			}
 			else{
-				System.out.print("ÊäÈë´íÎó£¬ÖØĞÂÊäÈë:");
+				System.out.print("è¾“å…¥é”™è¯¯ï¼Œé‡æ–°è¾“å…¥:");
 			}
 		}while(true);
 		System.out.println();
         for (int i=0;i<max;i++){ 
             System.out.print("("+(i+1)+")");
-            n=(int)(Math.random()*3+2);// 2-4¸ö²Ù×÷Êı
+            n=(int)(Math.random()*3+2);
             for(int j=0;j<n;j++){
-                num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// ¿ØÖÆËæ»úÊıÊıÖµ
+                num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);
             }
             for(int k=0;k <n-1;k++){
-                no[k]=(int)(Math.random()*useno+1);// Ëæ»ú²úÉú²Ù×÷·û
+                no[k]=(int)(Math.random()*useno+1);
 				if(no[k]==4&&num1[k+1]==0){
 					do{
 						num1[k+1]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);
@@ -114,7 +114,6 @@ public class zy2{
                 }
             }
             System.out.println();
-            // ¼ÆËãµÚÒ»´óÌâ´ğ°¸
             left=0;
             right=num1[0];
             sign=1;
@@ -140,8 +139,7 @@ public class zy2{
             }
             staticAnser[i]=String.valueOf(decimal.format(left+sign*right));
 		}
-        // Ñ§Éú´ğÌâÄ£¿é
-        System.out.println("###################´ğÌâ·Ö¸îÏß######################");
+        System.out.println("###################ç­”é¢˜åˆ†å‰²çº¿######################");
         for(int i=0;i<max;i++){
             System.out.print((i+1)+":");
             userAnser[i]=in.next();
@@ -149,44 +147,43 @@ public class zy2{
                 count++;
             }
         }
-        System.out.println("±ê×¼´ğ°¸Îª£º");
+        System.out.println("æ ‡å‡†ç­”æ¡ˆä¸ºï¼š");
         for(int i=0;i<max;i++){
             System.out.println((i+1)+":"+staticAnser[i]);
         }
-        System.out.println("´ğÌâÕıÈ·ÂÊÎª£º"+String.valueOf(decimal.format(((float)count/(float)max)*100))+"%");
-		//µÚ¶ş´óÌâ
+        System.out.println("ç­”é¢˜æ­£ç¡®ç‡ä¸ºï¼š"+String.valueOf(decimal.format(((float)count/(float)max)*100))+"%");
         if (real=='Y'||real=='y'){
-			System.out.println("¶ş¡¢Çë¼ÆËãÏÂÁĞÕæ·ÖÊıËãÊ½¡£");
+			System.out.println("äºŒã€è¯·è®¡ç®—ä¸‹åˆ—çœŸåˆ†æ•°ç®—å¼ã€‚");
             System.out.println();
             for(int i=0; i<max;i++){
                 System.out.print("("+(i+1)+") ");
-                for(int j=0;j<2;j++)// (µÚÒ»¸öÕæ·ÖÊı)
+                for(int j=0;j<2;j++)
                 {
-                    num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// ¿ØÖÆËæ»úÊıÊıÖµ
+                    num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);
                     if (j==1){
                         while(num1[j-1]>num1[j]||num1[j]==0){
-                            num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// ¿ØÖÆËæ»úÊıÊıÖµ
+                            num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);
                         }
                     }
                 }
-                for(int j=2;j<4;j++)// (µÚ¶ş¸öÕæ·ÖÊı)
-				{
-                    num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// ¿ØÖÆËæ»úÊıÊıÖµ
+                for(int j=2;j<4;j++)
+		{
+                    num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);
                     if(j==3){
                         while(num1[j-1]>num1[j]||num1[j]==0){
-                            num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// ¿ØÖÆËæ»úÊıÊıÖµ
+                            num1[j]=(int)(Math.random()*(cs[1]-cs[0])+cs[0]);// æ§åˆ¶éšæœºæ•°æ•°å€¼
                         }
                     }
                 }
-                for(int k=0;k <1;k++){// ·ûºÅ¸öÊı
-                     no[k]=(int)(Math.random()*useno+1);// Ëæ»ú²úÉú²Ù×÷·û
+                for(int k=0;k <1;k++){// ç¬¦å·ä¸ªæ•°
+                     no[k]=(int)(Math.random()*useno+1);// éšæœºäº§ç”Ÿæ“ä½œç¬¦
                  }
-                for(int h=0;h<4;h++){// 2¸öÕæ·ÖÊı
+                for(int h=0;h<4;h++){// 2ä¸ªçœŸåˆ†æ•°
                     if(h%2==0)
                         System.out.print(("("+num1[h]+"/"));
                     else if (h%2==1){
                         System.out.print(num1[h]+")");
-                        if (f<1){// ¿ØÖÆÖ»Êä³öÒ»¸ö²Ù×÷·û                             
+                        if (f<1){// æ§åˆ¶åªè¾“å‡ºä¸€ä¸ªæ“ä½œç¬¦                             
 						System.out.print(op[no[f]]);
                             f++;
                         } 
@@ -194,19 +191,18 @@ public class zy2{
                             System.out.println("="); 
                     }
                 }
-                // ¼ÆËãµÚ¶ş´óÌâ±ê×¼´ğ°¸ 
 				f=0;
 				count=0;
                 for (int g=0;g<1;g++){
                     s1=num1[0]*num1[3];
-                    s2=num1[1]*num1[3];//·ÖÄ¸
+                    s2=num1[1]*num1[3];//åˆ†æ¯
 					ss1=num1[1]*num1[2];
 					ff=0;
 					fff=0;
                     switch(op[no[g]]){
                     case '+':
                         result=s1+ss1;
-                        gys=countMaxSubmultiple(result,s2);// ³ıÒÔ¹«Ô¼ÊıµÃµ½×î¼ò·ÖÊı
+                        gys=countMaxSubmultiple(result,s2);// é™¤ä»¥å…¬çº¦æ•°å¾—åˆ°æœ€ç®€åˆ†æ•°
                         zjfz=String.valueOf(result/gys);
                         zjfm=String.valueOf(s2/gys);
                         break;
@@ -226,7 +222,7 @@ public class zy2{
 						zjfz=String.valueOf(result/gys);
                         zjfm=String.valueOf(s2/gys);
                         break;
-                    case '/':// ³ËÒÔµ¹Êı
+                    case '/':// ä¹˜ä»¥å€’æ•°
 						result=num1[0]*num1[3];
                         s2=num1[1]*num1[2];
                         gys=countMaxSubmultiple(s1,s2);
@@ -253,8 +249,8 @@ public class zy2{
 				else{
                     staticAnser[i]=zjfz+"/"+zjfm;
                 }
-            }// ´ğÌâÄ£°å
-            System.out.println("######################´ğÌâ·Ö¸îÏß#####################");
+            }
+            System.out.println("######################ç­”é¢˜åˆ†å‰²çº¿#####################");
             for(int i=0;i<max;i++){
                 System.out.print((i+1)+":");
                 userAnser[i]=in.next();
@@ -262,14 +258,14 @@ public class zy2{
                     count++;
                 }
             }
-            System.out.println("±ê×¼´ğ°¸Îª£º");
+            System.out.println("æ ‡å‡†ç­”æ¡ˆä¸ºï¼š");
             for(int i=0;i<max;i++){
                 System.out.println((i+1)+":"+staticAnser[i]);
             }
-            System.out.println("´ğÌâÕıÈ·ÂÊÎª£º"+String.valueOf(decimal.format(((float)count/(float)max)*100))+"%");
+            System.out.println("ç­”é¢˜æ­£ç¡®ç‡ä¸ºï¼š"+String.valueOf(decimal.format(((float)count/(float)max)*100))+"%");
 		}
 	}
-	private static int countMaxSubmultiple(int n1, int n2){// Çó×î´ó¹«Ô¼Êı
+	private static int countMaxSubmultiple(int n1, int n2){// æ±‚æœ€å¤§å…¬çº¦æ•°
         int maxSubmultiple=1;
 		n1=Math.abs(n1);
 		n2=Math.abs(n2);
